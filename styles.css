@@ -160,7 +160,7 @@ details p{color:var(--mut);font-size:15px;padding:0 0 16px}
 
 @media(max-width:1000px){
 .grid-4,.steps{grid-template-columns:repeat(2,1fr)}.about__in,.contact__in,.faq{grid-template-columns:1fr;gap:44px}
-.about__media{height:460px}.svc{flex-basis:calc((100% - 20px)/2)}.proj-grid{grid-template-columns:1fr}.proj{height:320px}.footer__in{grid-template-columns:1fr 1fr}}
+.about__media{height:460px}.svc{flex-basis:calc((100% - 20px)/2)}.proj-grid{grid-template-columns:1fr}.proj{height:320px}.footer__in{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){
 :root{--hh:64px}section{padding:72px 0}.header__in{gap:10px}
 .grid-3{grid-template-columns:1fr}.svc{flex-basis:86%}.sec-head{flex-direction:column;align-items:flex-start}
@@ -250,3 +250,23 @@ section.trust p{color:var(--mut);font-size:15px;margin-top:8px}
 .nav .nav__foot .nav__call{opacity:1;padding:13px;border:0;font-size:15px}
 }
 .logo{white-space:nowrap}.logo__n{white-space:nowrap}
+
+/* Mobile: no sideways overflow, footer fits the screen */
+html,body{overflow-x:clip}
+.footer a{overflow-wrap:anywhere}
+@media(max-width:760px){
+.footer__in{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px;padding:44px 0}
+.footer__in>div:first-child,.footer__in>div:last-child{grid-column:1/-1}
+}
+@media(max-width:380px){.info li{flex-direction:column;gap:4px}.info b{width:auto}.info span{overflow-wrap:anywhere}}
+
+/* Arrows: SVG, exactly centred */
+.arrows button{display:grid;place-items:center;padding:0;line-height:0}
+.arrows button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block}
+@media(max-width:1100px){
+.nav>a::after{content:"";width:18px;height:18px;margin-left:auto;flex:none;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+}
+
+/* Footer CTA button: keep it a flex button so the arrow sits dead centre */
+.footer .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:15px;margin:0}
+.footer .btn svg{display:block;flex:none}
