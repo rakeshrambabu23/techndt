@@ -78,5 +78,4 @@
     setTimeout(() => ok.hidden = true, 6000);
   });
 
-  $('#yr').textContent = new Date().getFullYear();
 })();

@@ -270,3 +270,38 @@ html,body{overflow-x:clip}
 /* Footer CTA button: keep it a flex button so the arrow sits dead centre */
 .footer .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:15px;margin:0}
 .footer .btn svg{display:block;flex:none}
+
+/* Logo image (assets/logo.png) */
+.logo img{height:44px;width:auto;max-width:210px;display:block}
+@media(max-width:560px){.logo img{height:38px}}
+.footer .logo{display:inline-block;background:#fff;padding:10px 14px;border-radius:12px;margin:0 0 4px}
+.footer .logo img{height:42px}
+.footer__bot .credit{display:inline;margin:0;font-size:inherit;font-weight:600;color:var(--paper)}
+.footer__bot .credit:hover{color:var(--or)}
+
+/* Shared footer placeholder (shown until footer.html loads) */
+#site-footer:empty{min-height:640px;background:var(--ink)}
+.footer__bot{flex-wrap:wrap;gap:8px 24px}
+.footer__bot{padding-bottom:64px}
+
+/* Bigger logo */
+:root{--hh:80px}
+.logo img{height:58px;max-width:260px}
+.footer .logo img{height:54px}
+@media(max-width:1100px){.nav{padding-top:100px}}
+@media(max-width:760px){:root{--hh:68px}.logo img{height:46px;max-width:200px}.footer .logo img{height:48px}}
+
+/* Logo, bigger again */
+:root{--hh:92px}
+.logo img{height:72px;max-width:340px;object-fit:contain}
+.footer .logo img{height:70px}
+@media(max-width:1100px){.nav{padding-top:112px}}
+@media(max-width:760px){:root{--hh:78px}.logo img{height:56px;max-width:min(240px,62vw)}.footer .logo img{height:58px}}
+
+/* Where we work */
+.cov{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.cov__g{display:grid;gap:26px}.cov__g h3{font-size:17px;margin-bottom:12px}
+.cov__c{display:flex;flex-wrap:wrap;gap:8px}
+.cov__c span{padding:8px 16px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);font-size:14px;font-weight:600}
+.cov__c--int span{background:var(--or);box-shadow:none;color:var(--ink)}
+@media(max-width:1000px){.cov{grid-template-columns:1fr;gap:30px}}
